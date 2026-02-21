@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.login-body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-box input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+}
+
+.login-box button {
+    padding: 10px 20px;
+    background: #2c5364;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#cesiumContainer {
+    width: 100%;
+    height: 100vh;
+}
+
+.top-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.top-buttons button {
+    padding: 10px;
+    margin: 5px;
+}
