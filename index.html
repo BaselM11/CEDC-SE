@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>هندسة الجنوب - تسجيل الدخول</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Tahoma", sans-serif;
+            direction: rtl;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url("south-portsaid.jpg") no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            padding: 40px 30px;
+            border-radius: 25px;
+            text-align: center;
+            width: 350px;
+            animation: fadeIn 1.2s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo Styling */
+        .logo {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(31,60,136,0.8), rgba(41,82,204,0.8));
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            animation: glow 2s infinite alternate, float 3s ease-in-out infinite;
+            width: 100%;
+            text-align: center;
+            max-width: 350px;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+            100% { box-shadow: 0 10px 40px rgba(41,82,204,0.8); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            margin: 6px 0;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin: 6px 0;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #1f3c88, #2952cc);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #162f6b, #1f3c88);
+        }
+
+        button:active {
+            transform: scale(0.96);
+        }
+
+        #error {
+            color: #ff7777;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Responsive for Mobile ===== */
+        @media (max-width: 500px) {
+            .container {
+                width: 90%;
+                padding: 30px 20px;
+            }
+            .logo {
+                max-width: 250px;
+                padding: 10px;
+            }
+            h1 {
+                font-size: 26px;
+                max-width: 250px;
+                padding: 8px 15px;
+            }
+            input[type="password"], button {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Company Logo -->
+    <img src="logo.png" alt="هندسة الجنوب" class="logo">
+
+    <!-- Title -->
+    <h1>هندسة الجنوب</h1>
+
+    <input type="password" id="password" placeholder="أدخل كلمة المرور">
+    <button onclick="checkPassword()">دخول</button>
+    <p id="error"></p>
+</div>
+
+<script>
+    function checkPassword() {
+        const password = document.getElementById("password").value;
+        if(password === "2030") {
+            window.location.href = "main.html";
+        } else {
+            document.getElementById("error").innerText = "كلمة المرور غير صحيحة";
+        }
+    }
+</script>
+
+</body>
+</html>
